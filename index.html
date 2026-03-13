@@ -457,6 +457,11 @@ footer {
   transform: translateY(0) scale(1);
   filter: blur(0);
 }
+.alien-reveal.step-4 {
+  opacity: 0;
+  filter: blur(6px);
+  transition: opacity 1.4s ease, filter 1.4s ease;
+}
 .alien-reveal.step-inactive {
   display: none !important;
 }
@@ -592,10 +597,15 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('.hero-title').classList.add('flicker');
   }, 2500);
 
+  // Step 4: Smoothly fade everything out
+  setTimeout(() => {
+    intro.classList.add("step-4");
+  }, 4400);
+
   // Clean up
   setTimeout(() => {
     intro.classList.add("step-inactive");
-  }, 5000);
+  }, 6000);
 });
 
 /* CURSOR */
